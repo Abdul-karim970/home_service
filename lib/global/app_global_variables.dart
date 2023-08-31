@@ -1,0 +1,1 @@
+bool imagePicked = false;
