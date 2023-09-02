@@ -1,25 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/picked_image_state_widgets.dart';
-
 import '../../../../all_bloc/picked_image_bloc/picked_image_bloc.dart';
 import '../../../../constants./app_color_constants.dart';
 import '../../../../constants/corner_radius.dart';
 import '../../../../constants/screen_size_const.dart';
+import '../../../../global/app_global_variables.dart';
 
 final double _screenWidthFirstPage = screenWidth;
 final double _screenHeightFirstPage = screenHeight;
 
-class NameTextField extends StatelessWidget {
-  const NameTextField({super.key, required this.hintText});
+class EmployeeNameTextField extends StatefulWidget {
+  const EmployeeNameTextField({super.key, required this.hintText});
   final String hintText;
+
+  @override
+  State<EmployeeNameTextField> createState() => _EmployeeNameTextFieldState();
+}
+
+class _EmployeeNameTextFieldState extends State<EmployeeNameTextField> {
+  late TextEditingController employeeNameController;
+  @override
+  void initState() {
+    super.initState();
+    employeeNameController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    employeeNameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: _screenWidthFirstPage * 0.6,
+      width: _screenWidthFirstPage * 0.8,
+      height: _screenHeightFirstPage * 0.11,
       child: TextFormField(
-        maxLength: 20,
+        validator: serviceFormValidator,
+        controller: employeeNameController,
         maxLines: 1,
         cursorColor: secondaryColor,
         decoration: InputDecoration(
@@ -30,7 +50,15 @@ class NameTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(textFieldCornerRadius),
               borderSide: const BorderSide(color: Colors.transparent)),
-          hintText: hintText,
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(textFieldCornerRadius),
+              borderSide:
+                  BorderSide(color: Theme.of(context).colorScheme.error)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(textFieldCornerRadius),
+              borderSide:
+                  BorderSide(color: Theme.of(context).colorScheme.error)),
+          hintText: widget.hintText,
           filled: true,
           fillColor: primaryVariantColor,
         ),

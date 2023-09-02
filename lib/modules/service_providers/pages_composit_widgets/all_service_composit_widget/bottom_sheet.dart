@@ -5,6 +5,8 @@ import 'package:home_service/modules/service_providers/pages_composit_widgets/al
 
 import 'sheet_first_page.dart';
 
+// Global key for form validation
+GlobalKey<FormState> formStateValidationKey = GlobalKey<FormState>();
 // Add service show bottom sheet button
 
 class AddServiceButton extends StatefulWidget {
@@ -83,20 +85,32 @@ class _AddServiceBottomSheet extends State<AddServiceBottomSheet>
     double progress = controller.hasClients ? (controller.page ?? 0) : 0;
     return SizedBox(
         width: screenWidth,
-        height: screenHeight * 0.55 + progress * screenHeight * 0.1,
+        height: screenHeight * 0.55 + progress * screenHeight * 0.2,
         child: Scaffold(
-          body: PageView(
-            controller: controller,
-            children: [
-              BottomSheetFirstPage(nextPageOnTap: nextPageClickListener),
-              const BottomSheetSecondPage()
-            ],
+          body: Form(
+            key: formStateValidationKey,
+            child: PageView(
+              controller: controller,
+              children: [
+                BottomSheetFirstPage(nextPageOnTap: nextPageClickListener),
+                BottomSheetSecondPage(
+                  submitServiceInfo: submitServiceInfoClickListener,
+                )
+              ],
+            ),
           ),
         ));
   }
 
   void nextPageClickListener() {
+    formStateValidationKey.currentState!.validate();
     controller.animateToPage(1,
         duration: const Duration(milliseconds: 500), curve: Curves.linear);
+  }
+
+  void submitServiceInfoClickListener() {
+    formStateValidationKey.currentState!.validate();
+    ScaffoldMessenger.of(context)
+        .showSnackBar(const SnackBar(content: Text('Submitted')));
   }
 }

@@ -1,16 +1,18 @@
 import 'package:currency_picker/currency_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/sheet_first_page_components.dart';
-
+import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
 import '../../../../all_bloc/currency_value_bloc/currency_bloc.dart';
 import '../../../../constants./app_color_constants.dart';
 import '../../../../constants/corner_radius.dart';
 import '../../../../constants/screen_size_const.dart';
 
+final double _screenWidthFirstPage = screenWidth;
+final double _screenHeightFirstPage = screenHeight;
+
 class EmployeeCredentials extends StatelessWidget {
   const EmployeeCredentials({super.key});
-  static const name = 'Employee name';
+  static const name = 'Booking price';
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class EmployeeCredentials extends StatelessWidget {
         SizedBox(
           width: screenWidth * 0.03,
         ),
-        const NameTextField(
+        const BookingPriceTextField(
           hintText: name,
         ),
         SizedBox(
@@ -57,8 +59,8 @@ class CurrencyPicker extends StatelessWidget {
         );
       },
       child: Container(
-        width: screenWidth * 0.3,
-        height: screenHeight * 0.075,
+        width: _screenWidthFirstPage * 0.3,
+        height: _screenHeightFirstPage * 0.075,
         decoration: BoxDecoration(
             color: primaryVariantColor,
             borderRadius: BorderRadius.circular(textFieldCornerRadius)),

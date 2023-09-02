@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/sheet_first_page_components.dart';
-
 import '../../../../constants/screen_size_const.dart';
-import 'first_page_currency_diaog.dart';
+import 'second_page_employee_crediential.dart';
 
 class BottomSheetSecondPage extends StatelessWidget {
-  const BottomSheetSecondPage({super.key});
-  static const price = 'Offer (Rs)';
+  const BottomSheetSecondPage({super.key, required this.submitServiceInfo});
+  static const description = 'Description';
+  final GestureTapCallback submitServiceInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +21,15 @@ class BottomSheetSecondPage extends StatelessWidget {
             SizedBox(
               height: screenHeightFirstPage * 0.03,
             ),
-            const ServicePriceTextField(
-              hintText: price,
-            ),
-            SizedBox(
-              height: screenHeightFirstPage * 0.02,
-            ),
             const EmployeeCredentials(),
-            SizedBox(
-              height: screenHeightFirstPage * 0.02,
+            const DescriptionTextField(
+              hintText: description,
             ),
-            GoToNextPageButton(
-              onTap: () {},
+            SizedBox(
+              height: screenHeightFirstPage * 0.03,
+            ),
+            SubmitServiceButton(
+              onTap: submitServiceInfo,
             ),
             SizedBox(
               height: screenHeightFirstPage * 0.02,

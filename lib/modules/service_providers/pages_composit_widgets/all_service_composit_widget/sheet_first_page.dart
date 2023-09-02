@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:home_service/constants/screen_size_const.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/first_page_currency_diaog.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
 import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/sheet_first_page_components.dart';
 
 class BottomSheetFirstPage extends StatelessWidget {
   const BottomSheetFirstPage({super.key, required this.nextPageOnTap});
   final GestureTapCallback nextPageOnTap;
-  static const description = 'Description';
+  static const name = 'Employee name';
 
   static const radius = 80.0;
   @override
@@ -23,11 +21,8 @@ class BottomSheetFirstPage extends StatelessWidget {
             SizedBox(
               height: screenHeightFirstPage * 0.03,
             ),
-            const ServicePriceTextField(
-              hintText: description,
-            ),
-            SizedBox(
-              height: screenHeightFirstPage * 0.02,
+            const EmployeeNameTextField(
+              hintText: name,
             ),
             const PickedImageWidget(),
             SizedBox(
