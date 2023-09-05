@@ -1,13 +1,14 @@
 extension FormValueCheck on String? {
-  bool isNotNullNotEmpty() {
+  // null or empty check
+  bool isNullOrEmpty() {
     String value = this ?? '';
-    return value.trim().isNotEmpty;
+    return value.trim().isEmpty;
   }
 
   // Name Validator
 
   bool isValidName() {
-    if (isNotNullNotEmpty()) {
+    if (!(isNullOrEmpty())) {
       String value = this!;
       return value.codeUnits.every((element) =>
           element >= 65 && element <= 90 ||

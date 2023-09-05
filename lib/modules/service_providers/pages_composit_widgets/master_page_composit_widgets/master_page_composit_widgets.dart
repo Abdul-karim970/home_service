@@ -4,6 +4,9 @@ import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/corner_radius.dart';
 import 'package:home_service/constants/screen_size_const.dart';
 
+final double _screenWidthFirstPage = screenWidth;
+final double _screenHeightFirstPage = screenHeight;
+
 // Master page services
 
 class ServiceMasterPageInfoWidgets extends StatelessWidget {
@@ -40,13 +43,13 @@ class ServiceMasterPageInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final serviceWidgetWidth = screenWidth * 0.4;
+    final serviceWidgetWidth = _screenWidthFirstPage * 0.4;
     return Stack(
       alignment: Alignment.bottomCenter,
       children: [
         Container(
           width: serviceWidgetWidth,
-          height: screenHeight * 0.25,
+          height: _screenHeightFirstPage * 0.25,
           decoration: BoxDecoration(
               color: primaryVariantColor,
               boxShadow: const [
@@ -60,7 +63,7 @@ class ServiceMasterPageInfoWidget extends StatelessWidget {
         Container(
           alignment: Alignment.bottomCenter,
           width: serviceWidgetWidth,
-          height: screenHeight * 0.1,
+          height: _screenHeightFirstPage * 0.1,
           decoration: BoxDecoration(
             gradient: const LinearGradient(
                 begin: Alignment.bottomCenter,
@@ -83,7 +86,7 @@ class ServiceMasterPageInfoWidget extends StatelessWidget {
                     fontWeight: FontWeight.w600),
               ),
               SizedBox(
-                height: screenHeight * 0.01,
+                height: _screenHeightFirstPage * 0.01,
               )
             ],
           ),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_service/constants/instances.dart';
+import 'package:home_service/constants/shared_pref_keys.dart';
 import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/picked_image_state_widgets.dart';
 import '../../../../all_bloc/picked_image_bloc/picked_image_bloc.dart';
 import '../../../../constants./app_color_constants.dart';
 import '../../../../constants/corner_radius.dart';
 import '../../../../constants/screen_size_const.dart';
-import '../../../../global/app_global_variables.dart';
+import '../../../../global/app_global_members.dart';
 
 final double _screenWidthFirstPage = screenWidth;
 final double _screenHeightFirstPage = screenHeight;
@@ -13,6 +15,7 @@ final double _screenHeightFirstPage = screenHeight;
 class EmployeeNameTextField extends StatefulWidget {
   const EmployeeNameTextField({super.key, required this.hintText});
   final String hintText;
+  static late TextEditingController employeeNameController;
 
   @override
   State<EmployeeNameTextField> createState() => _EmployeeNameTextFieldState();
@@ -23,22 +26,26 @@ class _EmployeeNameTextFieldState extends State<EmployeeNameTextField> {
   @override
   void initState() {
     super.initState();
-    employeeNameController = TextEditingController();
+    EmployeeNameTextField.employeeNameController = TextEditingController();
+    employeeNameController = EmployeeNameTextField.employeeNameController;
   }
 
   @override
   void dispose() {
-    employeeNameController.dispose();
+    sharedPreferences.setString(employeeNameTFKey, employeeNameController.text);
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    employeeNameController.text =
+        sharedPreferences.getString(employeeNameTFKey) ?? '';
     return SizedBox(
       width: _screenWidthFirstPage * 0.8,
       height: _screenHeightFirstPage * 0.11,
       child: TextFormField(
-        validator: serviceFormValidator,
+        maxLength: 20,
+        validator: employeeNameFormValidator,
         controller: employeeNameController,
         maxLines: 1,
         cursorColor: secondaryColor,

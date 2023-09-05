@@ -39,6 +39,8 @@ dependencies:
   firebase_core: ^2.15.1
   image_picker: ^1.0.3
   currency_picker: ^2.0.16
+  shared_preferences: ^2.2.1
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:

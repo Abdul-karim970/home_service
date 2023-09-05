@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:home_service/constants/firestore_instances.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/screen_size_const.dart';
-
+import '../../../constants/instances.dart';
 import '../pages_composit_widgets/master_page_composit_widgets/master_page_composit_widgets.dart';
+
+final double _screenHeightFirstPage = screenHeight;
 
 class ServiceMasterPage extends StatefulWidget {
   const ServiceMasterPage({
@@ -47,7 +48,7 @@ class _ServiceMasterPageState extends State<ServiceMasterPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              height: screenHeight * 0.07,
+              height: _screenHeightFirstPage * 0.07,
             ),
             const ServiceMasterPageInfoWidgets()
           ],

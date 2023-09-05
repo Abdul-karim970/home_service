@@ -41,6 +41,7 @@ class EmployeeCredentials extends StatelessWidget {
 
 class CurrencyPicker extends StatelessWidget {
   const CurrencyPicker({super.key});
+  static String currency = 'PKR';
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +70,7 @@ class CurrencyPicker extends StatelessWidget {
           children: [
             BlocBuilder<CurrencyBloc, CurrencyState>(
               builder: (context, state) {
+                currency = state.value;
                 return Text(
                   state.value,
                   style: const TextStyle(fontSize: 16),

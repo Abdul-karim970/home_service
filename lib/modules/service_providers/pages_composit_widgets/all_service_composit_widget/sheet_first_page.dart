@@ -30,7 +30,7 @@ class BottomSheetFirstPage extends StatelessWidget {
             ),
             GoToNextPageButton(onTap: nextPageOnTap),
             SizedBox(
-              height: screenHeightFirstPage * 0.02,
+              height: screenHeightFirstPage * 0.04,
             ),
           ],
         ),

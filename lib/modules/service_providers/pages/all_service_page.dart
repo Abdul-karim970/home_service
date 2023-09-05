@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:home_service/all_bloc/services.dart/service_event.dart';
 import 'package:home_service/constants/app_color_constants.dart';
-
+import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/services_state_widgets.dart';
+import 'package:home_service/modules/service_providers/pages_composit_widgets/service_list_widget.dart';
+import '../../../all_bloc/services.dart/service_bloc.dart';
 import '../pages_composit_widgets/all_service_composit_widget/bottom_sheet.dart';
 
 class AllServicesPage extends StatefulWidget {
@@ -23,6 +27,7 @@ class _AllServicesPageState extends State<AllServicesPage>
       vsync: this,
       duration: const Duration(milliseconds: 400),
     );
+    context.read<ServiceBloc>().add(ServiceFetchEvent());
   }
 
   @override
@@ -37,9 +42,7 @@ class _AllServicesPageState extends State<AllServicesPage>
         ],
       ),
       body: const Align(
-        alignment: Alignment.topCenter,
-        child: Text('No Data yet!'),
-      ),
+          alignment: Alignment.topCenter, child: ServiceAllStatesWidget()),
     );
   }
 }

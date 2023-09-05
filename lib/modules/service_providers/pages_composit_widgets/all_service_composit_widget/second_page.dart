@@ -6,6 +6,7 @@ import 'second_page_employee_crediential.dart';
 class BottomSheetSecondPage extends StatelessWidget {
   const BottomSheetSecondPage({super.key, required this.submitServiceInfo});
   static const description = 'Description';
+  static const userName = 'User Name';
   final GestureTapCallback submitServiceInfo;
 
   @override
@@ -22,6 +23,9 @@ class BottomSheetSecondPage extends StatelessWidget {
               height: screenHeightFirstPage * 0.03,
             ),
             const EmployeeCredentials(),
+            const EmployeeClassificationTextField(
+              hintText: userName,
+            ),
             const DescriptionTextField(
               hintText: description,
             ),
@@ -32,7 +36,7 @@ class BottomSheetSecondPage extends StatelessWidget {
               onTap: submitServiceInfo,
             ),
             SizedBox(
-              height: screenHeightFirstPage * 0.02,
+              height: screenHeightFirstPage * 0.04,
             ),
           ],
         ),
