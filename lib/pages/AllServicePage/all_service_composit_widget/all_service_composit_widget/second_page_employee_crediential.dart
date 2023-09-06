@@ -1,11 +1,11 @@
 import 'package:currency_picker/currency_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
-import '../../../../all_bloc/currency_value_bloc/currency_bloc.dart';
-import '../../../../constants./app_color_constants.dart';
-import '../../../../constants/corner_radius.dart';
-import '../../../../constants/screen_size_const.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_component.dart';
+import '../../../../../../constants./app_color_constants.dart';
+import '../../../../../../constants/corner_radius.dart';
+import '../../../../global/screen_size.dart';
+import '../../service_provider_all_bloc/currency_value_bloc/currency_bloc.dart';
 
 final double _screenWidthFirstPage = screenWidth;
 final double _screenHeightFirstPage = screenHeight;

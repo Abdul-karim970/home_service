@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_service/constants/screen_size_const.dart';
+
+import '../../../../global/screen_size.dart';
 
 part 'add_service_sheet_pageviewer_event.dart';
 part 'add_service_sheet_pageviewer_state.dart';

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_service/all_bloc/services.dart/service_event.dart';
 import 'package:home_service/constants/app_color_constants.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/services_state_widgets.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/service_list_widget.dart';
-import '../../../all_bloc/services.dart/service_bloc.dart';
-import '../pages_composit_widgets/all_service_composit_widget/bottom_sheet.dart';
+import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_bloc.dart';
+import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_event.dart';
+import 'all_service_composit_widget/all_service_composit_widget/bottom_sheet.dart';
+import 'all_service_composit_widget/all_service_composit_widget/service_list_widget.dart';
 
 class AllServicesPage extends StatefulWidget {
   const AllServicesPage({super.key});

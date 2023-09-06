@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:home_service/constants/app_color_constants.dart';
-import 'package:home_service/constants/screen_size_const.dart';
-import '../../../constants/instances.dart';
-import '../pages_composit_widgets/master_page_composit_widgets/master_page_composit_widgets.dart';
+
+import '../../global/instances.dart';
+import '../../global/screen_size.dart';
+import 'master_page_composit_widgets/master_page_composit_widgets.dart';
 
 final double _screenHeightFirstPage = screenHeight;
 

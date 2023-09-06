@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/corner_radius.dart';
-import 'package:home_service/constants/screen_size_const.dart';
 
+import '../../../../global/screen_size.dart';
 import 'modal.dart';
 
 final double _screenWidthFirstPage = screenWidth;

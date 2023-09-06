@@ -1,8 +1,9 @@
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/string_extensions_for_forms.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/string_extensions_for_forms.dart';
 
-int noOfServicePosted = 0;
+// is picked image for employee
 bool imagePicked = false;
 
+// Employee name validator
 String? employeeNameFormValidator(String? value) {
   if (value!.isNullOrEmpty()) {
     return 'Required*';

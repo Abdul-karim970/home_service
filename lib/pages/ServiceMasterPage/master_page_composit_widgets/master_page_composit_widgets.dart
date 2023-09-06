@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_service/Modules/service_providers/pages/all_service_page.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/corner_radius.dart';
-import 'package:home_service/constants/screen_size_const.dart';
+
+import '../../../global/screen_size.dart';
+import '../../AllServicePage/all_service_page.dart';
 
 final double _screenWidthFirstPage = screenWidth;
 final double _screenHeightFirstPage = screenHeight;

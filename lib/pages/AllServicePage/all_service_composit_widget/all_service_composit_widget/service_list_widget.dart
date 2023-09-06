@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../all_bloc/services.dart/service_bloc.dart';
-import 'all_service_composit_widget/services_state_widgets.dart';
+import '../../service_provider_all_bloc/services.dart/service_bloc.dart';
+import 'services_state_widgets.dart';
 
 class ServiceAllStatesWidget extends StatelessWidget {
   const ServiceAllStatesWidget({super.key});

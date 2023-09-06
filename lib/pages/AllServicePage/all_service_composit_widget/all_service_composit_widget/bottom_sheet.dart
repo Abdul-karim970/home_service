@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_service/all_bloc/services.dart/service_bloc.dart';
-import 'package:home_service/all_bloc/services.dart/service_event.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/firestore_referances.dart';
-import 'package:home_service/constants/instances.dart';
-import 'package:home_service/constants/screen_size_const.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/modal.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_employee_crediential.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/sheet_first_page_components.dart';
-
-import '../../../../global/app_global_members.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_component.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_employee_crediential.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/sheet_first_page_components.dart';
+import '../../../../global/instances.dart';
+import '../../../../global/screen_size.dart';
+import '../../service_provider_all_bloc/services.dart/service_bloc.dart';
+import '../../service_provider_all_bloc/services.dart/service_event.dart';
+import 'modal.dart';
 import 'sheet_first_page.dart';
 
 // Global key for form validation
 GlobalKey<FormState> formStateValidationKey = GlobalKey<FormState>();
-// Add service show bottom sheet button
 
+// Add service show bottom sheet button
 class AddServiceButton extends StatefulWidget {
   const AddServiceButton({
     super.key,
@@ -122,7 +120,7 @@ class _AddServiceBottomSheet extends State<AddServiceBottomSheet>
     bool isValidate = formStateValidationKey.currentState!.validate();
 
     if (isValidate) {
-      int serviceCount = noOfServicePosted++;
+      String timeOfPost = DateTime.now().toString();
       String serviceType =
           EmployeeClassificationTextField.employeeClassificationController.text;
       String name = EmployeeNameTextField.employeeNameController.text.trim();
@@ -132,15 +130,14 @@ class _AddServiceBottomSheet extends State<AddServiceBottomSheet>
       String currency = CurrencyPicker.currency;
       String description =
           DescriptionTextField.employeeDescriptionController.text.trim();
-      providedServiceColRef.doc('$serviceCount $serviceType').set(
-          EmployeeService(
-                  serviceType: serviceType,
-                  noOfService: serviceCount,
-                  employeeName: name,
-                  bookingPrice: bookingPrice,
-                  currency: currency,
-                  description: description)
-              .toMap());
+      providedServiceColRef.doc('$timeOfPost $serviceType').set(EmployeeService(
+              serviceType: serviceType,
+              timeOfPost: timeOfPost,
+              employeeName: name,
+              bookingPrice: bookingPrice,
+              currency: currency,
+              description: description)
+          .toMap());
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text('Service added')));
       EmployeeNameTextField.employeeNameController.clear();

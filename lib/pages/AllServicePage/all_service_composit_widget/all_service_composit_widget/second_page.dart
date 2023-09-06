@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:home_service/modules/service_providers/pages_composit_widgets/all_service_composit_widget/second_page_component.dart';
-import '../../../../constants/screen_size_const.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_component.dart';
+import '../../../../global/screen_size.dart';
 import 'second_page_employee_crediential.dart';
 
 class BottomSheetSecondPage extends StatelessWidget {
