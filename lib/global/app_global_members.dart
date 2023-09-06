@@ -1,6 +1,6 @@
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/string_extensions_for_forms.dart';
-
 // is picked image for employee
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/string_extensions_for_forms.dart';
+
 bool imagePicked = false;
 
 // Employee name validator

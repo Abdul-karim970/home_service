@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../service_provider_all_bloc/services.dart/service_bloc.dart';
+import '../service_provider_all_bloc/services.dart/service_bloc.dart';
 import 'services_state_widgets.dart';
 
 class ServiceAllStatesWidget extends StatelessWidget {

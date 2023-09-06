@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_service/constants/firestore_referances.dart';
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_event.dart';
-import '../../all_service_composit_widget/all_service_composit_widget/modal.dart';
+import '../../all_service_composit_widget/modal.dart';
 part 'service_state.dart';
 
 class ServiceBloc extends Bloc<ServiceFetchEvent, ServiceState> {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/sheet_first_page_components.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/sheet_first_page_components.dart';
 
 import '../../../../global/screen_size.dart';
 

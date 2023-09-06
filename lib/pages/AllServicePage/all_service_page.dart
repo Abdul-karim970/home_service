@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_bloc.dart';
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_event.dart';
-import 'all_service_composit_widget/all_service_composit_widget/bottom_sheet.dart';
-import 'all_service_composit_widget/all_service_composit_widget/service_list_widget.dart';
+import 'all_service_composit_widget/bottom_sheet.dart';
+import 'all_service_composit_widget/service_list_widget.dart';
 
 class AllServicesPage extends StatefulWidget {
   const AllServicesPage({super.key});

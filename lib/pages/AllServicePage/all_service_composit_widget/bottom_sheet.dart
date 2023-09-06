@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_service/constants/app_color_constants.dart';
 import 'package:home_service/constants/firestore_referances.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_component.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_employee_crediential.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/sheet_first_page_components.dart';
-import '../../../../global/instances.dart';
-import '../../../../global/screen_size.dart';
-import '../../service_provider_all_bloc/services.dart/service_bloc.dart';
-import '../../service_provider_all_bloc/services.dart/service_event.dart';
+import 'package:home_service/global/screen_size.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/second_page.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/second_page_component.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/second_page_employee_crediential.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/sheet_first_page_components.dart';
+
+import '../../../global/instances.dart';
+import '../service_provider_all_bloc/services.dart/service_bloc.dart';
+import '../service_provider_all_bloc/services.dart/service_event.dart';
 import 'modal.dart';
 import 'sheet_first_page.dart';
 

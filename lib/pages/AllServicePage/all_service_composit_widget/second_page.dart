@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:home_service/pages/AllServicePage/all_service_composit_widget/all_service_composit_widget/second_page_component.dart';
+import 'package:home_service/pages/AllServicePage/all_service_composit_widget/second_page_component.dart';
 import '../../../../global/screen_size.dart';
 import 'second_page_employee_crediential.dart';
 
