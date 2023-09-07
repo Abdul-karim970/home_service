@@ -10,13 +10,13 @@ class AddServiceSheetPageViewerBloc extends Bloc<
     AddServiceSheetPageViewerBlocEvent, AddServiceSheetPageViewerHeightState> {
   AddServiceSheetPageViewerBloc()
       : super(AddServiceSheetPageViewerHeightState(
-          sheetHeight: screenHeight * 0.4,
+          sheetHeight: heightOfScreen * 0.4,
         )) {
     on<AddServiceSheetPageViewerFirstPageHeightEvent>((event, emit) {
-      AddServiceSheetPageViewerHeightState(sheetHeight: screenHeight * 0.4);
+      AddServiceSheetPageViewerHeightState(sheetHeight: heightOfScreen * 0.4);
     });
     on<AddServiceSheetPageViewerSecondPageHeightEvent>((event, emit) {
-      AddServiceSheetPageViewerHeightState(sheetHeight: screenHeight * 0.7);
+      AddServiceSheetPageViewerHeightState(sheetHeight: heightOfScreen * 0.7);
     });
   }
 }

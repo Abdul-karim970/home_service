@@ -11,7 +11,7 @@ class BottomSheetFirstPage extends StatelessWidget {
   static const radius = 80.0;
   @override
   Widget build(BuildContext context) {
-    final double screenHeightFirstPage = screenHeight;
+    final double screenHeightFirstPage = heightOfScreen;
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Align(

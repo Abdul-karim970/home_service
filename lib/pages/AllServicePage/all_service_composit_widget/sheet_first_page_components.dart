@@ -9,8 +9,8 @@ import '../../../../global/instances.dart';
 import '../../../../global/screen_size.dart';
 import '../service_provider_all_bloc/picked_image_bloc/picked_image_bloc.dart';
 
-final double _screenWidthFirstPage = screenWidth;
-final double _screenHeightFirstPage = screenHeight;
+final double _screenWidthFirstPage = widthOfScreen;
+final double _screenHeightFirstPage = heightOfScreen;
 
 class EmployeeNameTextField extends StatefulWidget {
   const EmployeeNameTextField({super.key, required this.hintText});
@@ -111,7 +111,7 @@ class ImageSourcePickerSheetWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: screenHeight * 0.1,
+      height: heightOfScreen * 0.1,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -124,7 +124,7 @@ class ImageSourcePickerSheetWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: screenWidth * 0.05,
+            width: widthOfScreen * 0.05,
           ),
           ElevatedButton(
             onPressed: fileSourceOnPress,

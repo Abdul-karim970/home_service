@@ -7,8 +7,8 @@ import '../../../../constants/shared_pref_keys.dart';
 import '../../../../global/instances.dart';
 import '../../../../global/screen_size.dart';
 
-final double _screenWidthFirstPage = screenWidth;
-final double _screenHeightFirstPage = screenHeight;
+final double _screenWidthFirstPage = widthOfScreen;
+final double _screenHeightFirstPage = heightOfScreen;
 
 // Employee username
 
@@ -203,8 +203,8 @@ class DescriptionTextField extends StatefulWidget {
 
 class _DescriptionTextFieldState extends State<DescriptionTextField> {
   late TextEditingController employeeDescriptionController;
-  final double _screenWidthFirstPage = screenWidth;
-  final double _screenHeightFirstPage = screenHeight;
+  final double _screenWidthFirstPage = widthOfScreen;
+  final double _screenHeightFirstPage = heightOfScreen;
 
   @override
   void initState() {

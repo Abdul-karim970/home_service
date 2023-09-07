@@ -93,8 +93,8 @@ class _AddServiceBottomSheet extends State<AddServiceBottomSheet>
   Widget build(BuildContext context) {
     double progress = controller.hasClients ? (controller.page ?? 0) : 0;
     return SizedBox(
-        width: screenWidth,
-        height: screenHeight * 0.55 + progress * screenHeight * 0.2,
+        width: widthOfScreen,
+        height: heightOfScreen * 0.55 + progress * heightOfScreen * 0.2,
         child: Scaffold(
           body: Form(
             key: formStateValidationKey,

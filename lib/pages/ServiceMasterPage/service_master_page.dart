@@ -6,7 +6,7 @@ import '../../global/instances.dart';
 import '../../global/screen_size.dart';
 import 'master_page_composit_widgets/master_page_composit_widgets.dart';
 
-final double _screenHeightFirstPage = screenHeight;
+final double _screenHeightFirstPage = heightOfScreen;
 
 class ServiceMasterPage extends StatefulWidget {
   const ServiceMasterPage({
@@ -30,9 +30,6 @@ class _ServiceMasterPageState extends State<ServiceMasterPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    screenSize = MediaQuery.sizeOf(context);
-    screenWidth = screenSize.width;
-    screenHeight = screenSize.height;
   }
 
   @override
@@ -49,7 +46,7 @@ class _ServiceMasterPageState extends State<ServiceMasterPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              height: _screenHeightFirstPage * 0.07,
+              height: _screenHeightFirstPage * 0.04,
             ),
             const ServiceMasterPageInfoWidgets()
           ],

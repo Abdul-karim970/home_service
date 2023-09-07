@@ -7,8 +7,8 @@ import '../../../../../../constants/corner_radius.dart';
 import '../../../../global/screen_size.dart';
 import '../service_provider_all_bloc/currency_value_bloc/currency_bloc.dart';
 
-final double _screenWidthFirstPage = screenWidth;
-final double _screenHeightFirstPage = screenHeight;
+final double _screenWidthFirstPage = widthOfScreen;
+final double _screenHeightFirstPage = heightOfScreen;
 
 class EmployeeCredentials extends StatelessWidget {
   const EmployeeCredentials({super.key});
@@ -20,17 +20,17 @@ class EmployeeCredentials extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: screenWidth * 0.03,
+          width: widthOfScreen * 0.03,
         ),
         const BookingPriceTextField(
           hintText: name,
         ),
         SizedBox(
-          width: screenWidth * 0.03,
+          width: widthOfScreen * 0.03,
         ),
         const CurrencyPicker(),
         SizedBox(
-          width: screenWidth * 0.03,
+          width: widthOfScreen * 0.03,
         ),
       ],
     );

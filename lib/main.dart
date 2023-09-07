@@ -6,9 +6,11 @@ import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/bloc
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/currency_value_bloc/currency_bloc.dart';
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/picked_image_bloc/picked_image_bloc.dart';
 import 'package:home_service/pages/AllServicePage/service_provider_all_bloc/services.dart/service_bloc.dart';
-import 'package:home_service/pages/ServiceMasterPage/service_master_page.dart';
+import 'package:home_service/pages/ClientDashboard/Dashboard/DashboardComponents/BottomNavigation/bloc/index_bloc.dart';
+import 'package:home_service/pages/ClientDashboard/Dashboard/Dashboard/dashboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'global/screen_size.dart';
 import 'navigation/generate_rout.dart';
 
 void main() async {
@@ -23,6 +25,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    screenSize = MediaQuery.sizeOf(context);
+    widthOfScreen = screenSize.width;
+    heightOfScreen = screenSize.height;
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -34,15 +39,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CurrencyBloc(),
         ),
-        BlocProvider(create: (context) => ServiceBloc())
+        BlocProvider(create: (context) => ServiceBloc()),
+        BlocProvider(
+          create: (context) => IndexBloc(),
+        )
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Home Service',
         theme: ThemeData(
           useMaterial3: true,
         ),
         onGenerateRoute: onGenerateRout,
-        initialRoute: ServiceMasterPage.name,
+        initialRoute: Dashboard.name,
       ),
     );
   }

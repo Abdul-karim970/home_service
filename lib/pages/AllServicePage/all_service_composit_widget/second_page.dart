@@ -11,7 +11,7 @@ class BottomSheetSecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHeightFirstPage = screenHeight;
+    final double screenHeightFirstPage = heightOfScreen;
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),

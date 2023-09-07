@@ -6,8 +6,8 @@ import 'package:home_service/constants/corner_radius.dart';
 import '../../../../global/screen_size.dart';
 import 'modal.dart';
 
-final double _screenWidthFirstPage = screenWidth;
-final double _screenHeightFirstPage = screenHeight;
+final double _screenWidthFirstPage = widthOfScreen;
+final double _screenHeightFirstPage = heightOfScreen;
 
 // Initial state widget
 class InitialStateWidget extends StatelessWidget {
@@ -66,9 +66,9 @@ class ServicesList extends ListView {
       : super.builder(
             clipBehavior: Clip.none,
             padding: EdgeInsets.only(
-                left: screenWidth * 0.07, right: screenWidth * 0.07),
+                left: widthOfScreen * 0.07, right: widthOfScreen * 0.07),
             itemCount: services.length,
-            itemExtent: screenHeight * 0.25,
+            itemExtent: heightOfScreen * 0.25,
             itemBuilder: (context, index) => ServiceItem(
                   context: context,
                   index: index,
@@ -130,7 +130,7 @@ class ServiceItem extends StatelessWidget {
                     style: GoogleFonts.calistoga(
                         color: secondaryColor,
                         fontWeight: FontWeight.w300,
-                        fontSize: screenWidth * 0.035)),
+                        fontSize: widthOfScreen * 0.035)),
               ),
             ),
             SizedBox(
@@ -146,7 +146,7 @@ class ServiceItem extends StatelessWidget {
                     style: GoogleFonts.forum(
                         color: secondaryColor,
                         fontWeight: FontWeight.bold,
-                        fontSize: screenWidth * 0.045)),
+                        fontSize: widthOfScreen * 0.045)),
               ),
             ),
           ],

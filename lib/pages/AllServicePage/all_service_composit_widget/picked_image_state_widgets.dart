@@ -6,8 +6,8 @@ import '../../../../constants./app_color_constants.dart';
 import '../../../../global/screen_size.dart';
 import '../service_provider_all_bloc/picked_image_bloc/picked_image_bloc.dart';
 
-final double _screenWidthFirstPage = screenWidth;
-final double _screenHeightFirstPage = screenHeight;
+final double _screenWidthFirstPage = widthOfScreen;
+final double _screenHeightFirstPage = heightOfScreen;
 
 // Image initial widget
 
@@ -128,8 +128,8 @@ class ProviderImageLoadedStateWidget extends StatelessWidget {
                 context.read<PickedImageBloc>().add(RemoveImageEvent());
               },
               child: Container(
-                width: screenWidth * 0.1,
-                height: screenHeight * 0.05,
+                width: widthOfScreen * 0.1,
+                height: heightOfScreen * 0.05,
                 decoration: BoxDecoration(
                     color: primaryVariantColor,
                     borderRadius: BorderRadius.circular(5)),
